@@ -18,14 +18,14 @@ interface DataAPI {
     @GET("api/v2/demons/")
     suspend fun getList(
         @Query("limit") limit: Int,
-        @Query("after") after: Int = 0
+        @Query("after") after: String? = null
     ): List<ListedDemonData>
 
     @GET("api/v2/demons/")
     suspend fun getList(
         @Query("limit") limit: Int,
-        @Query("after") after: Int,
-        @Query("before") before: Int
+        @Query("after") after: String,
+        @Query("before") before: String
     ): List<ListedDemonData>
 
     @GET("api/v2/demons/listed")
